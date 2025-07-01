@@ -84,7 +84,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
                   value="all"
                   checked={filters.category === "all"}
                   onChange={(e) => onFilterChange({ category: e.target.value })}
-                  className="mr-2 sm:mr-3 text-gray-900 focus:ring-gray-900"
+                  className="mr-2 sm:mr-3 text-gray-800 focus:ring-gray-900"
                 />
                 All
               </label>

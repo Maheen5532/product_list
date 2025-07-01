@@ -56,7 +56,7 @@ export const ProductDetail: React.FC = () => {
         className={`h-4 w-4 ${
           index < Math.floor(rating)
             ? "text-gray-900 fill-current"
-            : "text-gray-200"
+            : "text-gray-300"
         }`}
       />
     ));

@@ -106,7 +106,7 @@ export const ProductCatalog: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="space-y-6 sm:space-y-8 lg:space-y-12 py-6 sm:py-8 lg:py-12">
+      <div className="space-y-5 sm:space-y-8 lg:space-y-12 py-6 sm:py-8 lg:py-12">
         {/* Hero Section */}
         <div className="text-center space-y-4 sm:space-y-6 animate-fade-in px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 sm:space-y-4">
