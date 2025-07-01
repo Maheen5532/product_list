@@ -55,7 +55,7 @@ export const ProductCatalog: React.FC = () => {
       });
 
       const response = await fetch(
-        `http://localhost:3001/api/products?${queryParams}`
+        `https://product-listing-backend-kohl.vercel.app/api/products?${queryParams}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch products");
