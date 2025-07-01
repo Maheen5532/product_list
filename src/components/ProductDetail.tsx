@@ -33,7 +33,7 @@ export const ProductDetail: React.FC = () => {
   const fetchProduct = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3001/api/products/${id}`);
+      const response = await fetch(`https://product-listing-backend-kohl.vercel.app/api/products/${id}`);
       if (!response.ok) {
         throw new Error("Product not found");
       }
