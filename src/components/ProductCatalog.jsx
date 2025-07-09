@@ -83,7 +83,6 @@ export const ProductCatalog = () => {
   return (
     <div className="min-h-screen">
       <div className="space-y-6 sm:space-y-8 lg:space-y-12 py-6 sm:py-8 lg:py-12">
-        {/* Hero Section */}
         <div className="text-center space-y-4 sm:space-y-6 animate-fade-in px-4 sm:px-6 lg:px-8">
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent leading-tight">
@@ -97,7 +96,6 @@ export const ProductCatalog = () => {
           </div>
         </div>
 
-        {/* Search Section */}
         <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl mx-auto relative group px-4 sm:px-6 lg:px-8">
           <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg sm:rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
           <div className="relative bg-white rounded-lg sm:rounded-xl shadow-lg border border-gray-100">
@@ -112,7 +110,6 @@ export const ProductCatalog = () => {
           </div>
         </div>
 
-        {/* Visual elements */}
         <div className="flex justify-center items-center space-x-4 sm:space-x-6 lg:space-x-8 opacity-60 px-4">
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-300 rounded-full animate-pulse"></div>
           <div className="w-8 sm:w-12 lg:w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
@@ -127,10 +124,8 @@ export const ProductCatalog = () => {
           ></div>
         </div>
 
-        {/* Main Content Grid */}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 lg:gap-8 items-start px-4 sm:px-6 lg:px-8">
-            {/* Filters Sidebar */}
             <div className="xl:col-span-1 order-1 xl:order-1">
               <div className="sticky top-4">
                 <ProductFilters
@@ -140,9 +135,7 @@ export const ProductCatalog = () => {
               </div>
             </div>
 
-            {/* Products Section */}
             <div className="xl:col-span-3 space-y-4 sm:space-y-6 order-2 xl:order-2">
-              {/* Controls */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-sm bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                   <span className="text-gray-600 text-sm sm:text-base lg:text-lg whitespace-nowrap">
@@ -206,7 +199,6 @@ export const ProductCatalog = () => {
                 </div>
               </div>
 
-              {/* Products Display */}
               {loading ? (
                 <div className="flex justify-center items-center py-12 sm:py-16">
                   <LoadingSpinner />
