@@ -1,24 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-interface FilterState {
-  category: string;
-  minRating: string;
-  search: string;
-  sortBy: string;
-  sortOrder: string;
-}
-
-interface ProductFiltersProps {
-  filters: FilterState;
-  onFilterChange: (filters: Partial<FilterState>) => void;
-}
-
-export const ProductFilters: React.FC<ProductFiltersProps> = ({
-  filters,
-  onFilterChange,
-}) => {
-  const [categories, setCategories] = useState<string[]>([]);
+export const ProductFilters = ({ filters, onFilterChange }) => {
+  const [categories, setCategories] = useState([]);
   const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {

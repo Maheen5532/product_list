@@ -3,25 +3,11 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Star, Minus, Plus } from "lucide-react";
 import { LoadingSpinner } from "./LoadingSpinner";
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  rating: number;
-  reviews: number;
-  image: string;
-  inStock: boolean;
-  brand: string;
-  features: string[];
-}
-
-export const ProductDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const [product, setProduct] = useState<Product | null>(null);
+export const ProductDetail = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -49,7 +35,7 @@ export const ProductDetail: React.FC = () => {
     }
   };
 
-  const renderStars = (rating: number) => {
+  const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
@@ -62,7 +48,7 @@ export const ProductDetail: React.FC = () => {
     ));
   };
 
-  const updateQuantity = (change: number) => {
+  const updateQuantity = (change) => {
     setQuantity((prev) => Math.max(1, Math.min(10, prev + change)));
   };
 

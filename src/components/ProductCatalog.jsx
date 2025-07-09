@@ -4,36 +4,12 @@ import { ProductFilters } from "./ProductFilters";
 import { LoadingSpinner } from "./LoadingSpinner";
 import { Search, Grid, List } from "lucide-react";
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  rating: number;
-  reviews: number;
-  image: string;
-  inStock: boolean;
-  brand: string;
-  features: string[];
-}
-
-interface FilterState {
-  category: string;
-  minPrice: string;
-  maxPrice: string;
-  minRating: string;
-  search: string;
-  sortBy: string;
-  sortOrder: string;
-}
-
-export const ProductCatalog: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+export const ProductCatalog = () => {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [filters, setFilters] = useState<FilterState>({
+  const [error, setError] = useState(null);
+  const [viewMode, setViewMode] = useState("grid");
+  const [filters, setFilters] = useState({
     category: "all",
     minPrice: "",
     maxPrice: "",
@@ -75,11 +51,11 @@ export const ProductCatalog: React.FC = () => {
     fetchProducts();
   }, [filters]);
 
-  const handleFilterChange = (newFilters: Partial<FilterState>) => {
+  const handleFilterChange = (newFilters) => {
     setFilters((prev) => ({ ...prev, ...newFilters }));
   };
 
-  const handleSortChange = (sortBy: string) => {
+  const handleSortChange = (sortBy) => {
     const newSortOrder =
       filters.sortBy === sortBy && filters.sortOrder === "asc" ? "desc" : "asc";
     setFilters((prev) => ({ ...prev, sortBy, sortOrder: newSortOrder }));

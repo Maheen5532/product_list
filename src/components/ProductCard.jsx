@@ -2,30 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  rating: number;
-  reviews: number;
-  image: string;
-  inStock: boolean;
-  brand: string;
-  features: string[];
-}
-
-interface ProductCardProps {
-  product: Product;
-  viewMode: "grid" | "list";
-}
-
-export const ProductCard: React.FC<ProductCardProps> = ({
-  product,
-  viewMode,
-}) => {
-  const renderStars = (rating: number) => {
+export const ProductCard = ({ product, viewMode }) => {
+  const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
