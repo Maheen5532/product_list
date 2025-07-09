@@ -143,7 +143,7 @@ export const ProductCatalog = () => {
             {/* Products Section */}
             <div className="xl:col-span-3 space-y-4 sm:space-y-6 order-2 xl:order-2">
               {/* Controls */}
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-sm">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-sm bg-white rounded-lg p-4 shadow-sm border border-gray-100">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                   <span className="text-gray-600 text-sm sm:text-base lg:text-lg whitespace-nowrap">
                     Sort by:
@@ -185,20 +185,20 @@ export const ProductCatalog = () => {
                 <div className="flex space-x-2 self-start sm:self-auto">
                   <button
                     onClick={() => setViewMode("grid")}
-                    className={`p-2 transition-colors ${
+                    className={`p-2 rounded-md transition-colors ${
                       viewMode === "grid"
-                        ? "text-gray-900"
-                        : "text-gray-400 hover:text-gray-600"
+                        ? "text-gray-900 bg-gray-100"
+                        : "text-gray-400 hover:text-gray-600 hover:bg-gray-50"
                     }`}
                   >
                     <Grid className="h-5 w-5 sm:h-6 sm:w-6" />
                   </button>
                   <button
                     onClick={() => setViewMode("list")}
-                    className={`p-2 transition-colors ${
+                    className={`p-2 rounded-md transition-colors ${
                       viewMode === "list"
-                        ? "text-gray-900"
-                        : "text-gray-400 hover:text-gray-600"
+                        ? "text-gray-900 bg-gray-100"
+                        : "text-gray-400 hover:text-gray-600 hover:bg-gray-50"
                     }`}
                   >
                     <List className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -208,7 +208,7 @@ export const ProductCatalog = () => {
 
               {/* Products Display */}
               {loading ? (
-                <div className="flex justify-center py-8 sm:py-12">
+                <div className="flex justify-center items-center py-12 sm:py-16">
                   <LoadingSpinner />
                 </div>
               ) : products.length === 0 ? (
@@ -237,8 +237,13 @@ export const ProductCatalog = () => {
                       />
                     ))}
                   </div>
-                  <div className="mt-8 sm:mt-12 text-center text-xs sm:text-sm text-gray-500">
-                    {products.length} product{products.length !== 1 ? "s" : ""}
+                  <div className="mt-8 sm:mt-12 text-center">
+                    <div className="inline-flex items-center justify-center px-4 py-2 bg-gray-50 rounded-full">
+                      <span className="text-xs sm:text-sm text-gray-500">
+                        {products.length} product
+                        {products.length !== 1 ? "s" : ""} found
+                      </span>
+                    </div>
                   </div>
                 </>
               )}
